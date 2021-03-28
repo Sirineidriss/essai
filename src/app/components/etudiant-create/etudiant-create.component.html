@@ -1,0 +1,35 @@
+<div class="container custom-container">
+  <div class="col-md-12">
+    <h3 class="mb-3 text-center">Create Employee</h3>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="etudiantDetails.nom" class="form-control" placeholder="nom">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="etudiantDetails.prenom" class="form-control" placeholder="prenom">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="etudiantDetails.matricule" class="form-control" placeholder="matricule">
+    </div>
+
+    <div class="form-group">
+
+    <label for="classe">Classe</label>
+      <select class="btn btn-secondary dropdown-toggle"  [(ngModel)]="etudiantDetails.owner" >
+        <option value="">Select Classe</option>
+        <option *ngFor="let owner_item of Owner" [value]="owner_item.id">{{owner_item.labelle}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="addEtudiant()">Create Etudiant</button>
+    </div>
+
+  </div>
+</div>
+
+
+
+

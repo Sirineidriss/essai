@@ -1,0 +1,57 @@
+<!-- <div class="container custom-container">
+  <div class="col-md-12">
+    
+    <h3 class="mb-3 text-center">Update Etudiante</h3>
+ -->
+    <!-- <div class="form-group">
+      <input type="text" [(ngModel)]="etudiant.nom" class="form-control" placeholder="Nom">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="etudiant.prenom" class="form-control" placeholder="Prenom">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="etudiant.matricule" class="form-control" placeholder="Matricule">
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="updatEtudiant()">Update Etudiant</button>
+    </div>
+    
+  </div>
+</div> -->
+
+<div class="container custom-container">
+    <div class="col-md-12">
+      
+      <h3 class="mb-3 text-center">Update Etudiant</h3>
+  
+      <div class="form-group">
+        <input type="text" [(ngModel)]="etudiantData.nom" class="form-control" placeholder="Name">
+      </div>
+  
+      <div class="form-group">
+        <input type="text" [(ngModel)]="etudiantData.prenom" class="form-control" placeholder="Lastname">
+      </div>
+  
+      <div class="form-group">
+        <input type="text" [(ngModel)]="etudiantData.matricule" class="form-control" placeholder="Matricule">
+      </div>
+      
+    <div>
+      <label for="classe">Classe</label>
+      <select class="btn btn-secondary dropdown-toggle"  [(ngModel)]="etudiantData.owner" >
+        <option value="">Select Classe</option>
+        <option *ngFor="let owner_item of Owner" [value]="owner_item.id">{{owner_item.labelle}}</option>
+      </select>
+    </div>
+  
+      <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" (click)="updateEtudiant()">Update Etudiant</button>
+      </div>
+      
+    </div>
+  </div>
+  
+

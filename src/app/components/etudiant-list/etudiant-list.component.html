@@ -1,0 +1,103 @@
+<div class="container custom-container-2">
+
+  <!-- Show it when there is no Etudiant -->
+  <div class="no-data text-center" *ngIf="Etudiant.length == 0">
+    <p>There is no Etudiant added yet!</p>
+    <button class="btn btn-outline-primary" routerLink="/create-etudiant">Add Etudiant</button>
+  </div>
+
+  <!-- Etudiant list table, it hides when there is no Etudiant -->
+  <div *ngIf="Etudiant.length !== 0">
+    <h3 class="mb-3 text-center">Etudiant List</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+         
+            <th scope="col">Name</th>
+            <th scope="col">Lastname</th>
+            <th scope="col">Matricule</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let etudiant of Etudiant">
+            <td>{{etudiant.nom}}</td>
+            <td>{{etudiant.prenom}}</td>
+            <td>{{etudiant.matricule}}</td>
+            <td>
+              
+           <span  type="button" class="btn btn-sm btn-primary" routerLink="/etudiant-edit/{{etudiant.id}}">Edit</span>
+           <span type="button" class="btn btn-sm btn-danger" (click)="deleteEtudiant(etudiant.id)">Delete</span>
+          </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- <div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-4">
+        <input type="text" class="form-control" placeholder="Search by name"  [(ngModel)]="nom" />
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" (click)="searchByName()" >
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>Etudiants List</h4>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let etudiant of etudiants; let i = index" [class.active]="i == currentIndex"
+          (click)="setCurrentEtudiant(etudiant, i)" > Nom: {{ etudiant.nom}} |Prenom: {{ etudiant.prenom}} | Matricule:{{ etudiant.matricule}}
+        </li>
+      </ul>
+  
+      <button class="m-4 btn btn-sm btn-danger" (click)="deleteEtudiants(etudiants.id)">
+        Delete 
+      </button> -->
+
+     <!--  <button class="m-4 btn btn-sm btn-danger" (click)="onDeleteEtudiant(id)">
+      </button> -->
+ <!--    </div>
+    <div class="col-md-6">
+      <div *ngIf="currentEtudiant">
+        <h4>Etudiant</h4>
+        <div>
+          <label><strong>Nom:</strong></label>
+         {{currentEtudiant.nom}}
+        </div>
+        <div>
+          <label><strong>Prenom:</strong></label>
+          {{currentEtudiant.prenom}}
+
+        </div>
+        <div>
+          <label><strong>Matricule:</strong></label>
+          {{currentEtudiant.matricule}}
+
+        </div> -->
+       <!--  <div>
+            <label><strong>Owner:</strong></label>
+    
+          </div> -->
+  
+       <!--  <a class="badge badge-warning" routerLink="/etudiant-edit/{{currentEtudiant.id}}">
+          Edit
+        </a>
+      </div>
+  
+      <div *ngIf="!currentEtudiant">
+        <br />
+        <p>Please click on a Etudant</p>
+      </div>
+    </div>
+  </div> -->
